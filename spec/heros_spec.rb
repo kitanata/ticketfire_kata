@@ -394,4 +394,14 @@ RSpec.describe Hero, "#init" do
     expect(@champion.hp).to eq(30)
   end
 
+  it "should have class of rogue" do
+    @champion.class = :rogue
+    expect(@champion.class).to eq(:rogue)
+  end
+
+  it "should have class of warrior" do
+    @champion.class = :warrior
+    expect(@champion.class).to eq(:warrior)
+  end
+
 end
