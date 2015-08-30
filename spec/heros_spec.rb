@@ -375,4 +375,23 @@ end
 end
 
 RSpec.describe Hero, "#init" do
+  before(:each) do
+    @champion = Hero.new
+  end
+
+  it "should have a name" do
+    @champion.name = "Shane"
+    expect(@champion.name).to eq("Shane")
+  end
+
+  it "should have a weapon" do
+    @champion.weapon = Weapon.new
+    @champion.weapon.should_not be_nil
+  end
+
+  it "should have base hp of 30" do
+    @champion.hp = 30
+    expect(@champion.hp).to eq(30)
+  end
+
 end

@@ -31,4 +31,5 @@ end
 
 
 class Hero
+  attr_accessor :name, :weapon, :hp
 end
