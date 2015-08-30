@@ -18,7 +18,8 @@ RSpec.describe Weapon, "#init" do
 
   it "A long weapon should have a long of 6" do
     @subject.quality = :long
-    expect(@subject.damage).to eq(6)
+    #expect(@subject.damage).to eq(6)
+    @subject.damage.should eq(6)
   end
 
   it "A great weapon should have a great of 7" do
