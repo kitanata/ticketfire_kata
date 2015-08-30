@@ -1,7 +1,7 @@
 
 class Weapon
   attr_accessor :type
-  attr_writer :quality , :primary_enchantment
+  attr_writer :quality , :primary_enchantment, :secondary_enchantment
 
   def damage
     case @quality
@@ -19,13 +19,11 @@ class Weapon
   end
 
   def to_s
-    case @primary_enchantment
-    when nil
-      "#{@quality.to_s.capitalize} #{@type.to_s.capitalize}"
-    else
-      "#{@quality.to_s.capitalize} #{@type.to_s.capitalize} of #{@primary_enchantment.to_s.capitalize}"
-    end
-
+    return "#{@quality.to_s.capitalize} #{@type.to_s.capitalize}" if(@primary_enchantment.nil?)
+        
+    return  "#{@quality.to_s.capitalize} #{@type.to_s.capitalize} of #{@primary_enchantment.to_s.capitalize}" if(@secondary_enchantment.nil?)
+       
+    "#{@secondary_enchantment.to_s.capitalize} #{@quality.to_s.capitalize} #{@type.to_s.capitalize} of #{@primary_enchantment.to_s.capitalize}"
   end
 
 end
