@@ -228,6 +228,104 @@ RSpec.describe Weapon, "#init" do
     end
   end
 
+   context "Weapon has no primary enchantment" do
+    it "A shabby knife should have a sensible name" do
+      @subject.quality = :shabby
+      @subject.type = :knife
+      expect(@subject.to_s).to eq("Shabby Knife")
+    end
+
+    it "A shabby sword should have a sensible name" do
+      @subject.quality = :shabby
+      @subject.type = :sword
+      expect(@subject.to_s).to eq("Shabby Sword")
+    end
+
+    it "A shabby bow should have a sensible name" do
+      @subject.quality = :shabby
+      @subject.type = :bow
+      expect(@subject.to_s).to eq("Shabby Bow")
+    end
+
+    it "A shabby staff should have a sensible name" do
+      @subject.quality = :shabby
+      @subject.type = :staff
+      expect(@subject.to_s).to eq("Shabby Staff")
+    end
+
+    it "A long knife should have a sensible name" do
+      @subject.quality = :long
+      @subject.type = :knife
+      expect(@subject.to_s).to eq("Long Knife")
+    end
+
+    it "A long sword should have a sensible name" do
+      @subject.quality = :long
+      @subject.type = :sword
+      expect(@subject.to_s).to eq("Long Sword")
+    end
+
+    it "A long bow should have a sensible name" do
+      @subject.quality = :long
+      @subject.type = :bow
+      expect(@subject.to_s).to eq("Long Bow")
+    end
+
+    it "A long staff should have a sensible name" do
+      @subject.quality = :long
+      @subject.type = :staff
+      expect(@subject.to_s).to eq("Long Staff")
+    end
+
+    it "A great knife should have a sensible name" do
+      @subject.quality = :great
+      @subject.type = :knife
+      expect(@subject.to_s).to eq("Great Knife")
+    end
+
+    it "A great sword should have a sensible name" do
+      @subject.quality = :great
+      @subject.type = :sword
+      expect(@subject.to_s).to eq("Great Sword")
+    end
+
+    it "A great bow should have a sensible name" do
+      @subject.quality = :great
+      @subject.type = :bow
+      expect(@subject.to_s).to eq("Great Bow")
+    end
+
+    it "A great staff should have a sensible name" do
+      @subject.quality = :great
+      @subject.type = :staff
+      expect(@subject.to_s).to eq("Great Staff")
+    end
+
+    it "A bastard knife should have a sensible name" do
+      @subject.quality = :bastard
+      @subject.type = :knife
+      expect(@subject.to_s).to eq("Bastard Knife")
+    end
+
+    it "A bastard sword should have a sensible name" do
+      @subject.quality = :bastard
+      @subject.type = :sword
+      expect(@subject.to_s).to eq("Bastard Sword")
+    end
+
+      it "A bastard bow should have a sensible name" do
+      @subject.quality = :bastard
+      @subject.type = :bow
+      expect(@subject.to_s).to eq("Bastard Bow")
+    end
+
+    it "A bastard staff should have a sensible name" do
+      @subject.quality = :bastard
+      @subject.type = :staff
+      expect(@subject.to_s).to eq("Bastard Staff")
+    end
+  end
+
   context "Weapon is a knife" do
     before(:each) do
       @subject.type = :knife

@@ -19,7 +19,13 @@ class Weapon
   end
 
   def to_s
-    "#{@quality.to_s.capitalize} #{@type.to_s.capitalize} of #{@primary_enchantment.to_s.capitalize}"
+    case @primary_enchantment
+    when nil
+      "#{@quality.to_s.capitalize} #{@type.to_s.capitalize}"
+    else
+      "#{@quality.to_s.capitalize} #{@type.to_s.capitalize} of #{@primary_enchantment.to_s.capitalize}"
+    end
+
   end
 
 end
