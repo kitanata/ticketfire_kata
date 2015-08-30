@@ -17,6 +17,10 @@ class Weapon
       5
     end
   end
+
+  def to_s
+    "#{@quality.to_s.capitalize} #{@type.to_s.capitalize}"
+  end
 end
 
 

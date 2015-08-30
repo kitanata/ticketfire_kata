@@ -26,6 +26,24 @@ RSpec.describe Weapon, "#init" do
     expect(@subject.damage).to eq(7)
   end
 
+  it "A shabby knife should have a sensible name" do
+    @subject.quality = :shabby
+    @subject.type = :knife
+    expect(@subject.to_s).to eq("Shabby Knife")
+  end
+
+  it "A long sword should have a sensible name" do
+    @subject.quality = :long
+    @subject.type = :sword
+    expect(@subject.to_s).to eq("Long Sword")
+  end
+
+  it "A shabby sword shoul dhave a sensible name" do
+    @subject.quality = :shabby
+    @subject.type = :sword
+    expect(@subject.to_s).to eq("Shabby Sword")
+  end
+  
   context "Weapon is a knife" do
     before(:each) do
       @subject.type = :knife
