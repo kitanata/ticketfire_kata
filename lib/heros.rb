@@ -1,7 +1,7 @@
 
 class Weapon
   attr_accessor :type
-  attr_writer :quality
+  attr_writer :quality , :primary_enchantment
 
   def damage
     case @quality
@@ -19,8 +19,9 @@ class Weapon
   end
 
   def to_s
-    "#{@quality.to_s.capitalize} #{@type.to_s.capitalize}"
+    "#{@quality.to_s.capitalize} #{@type.to_s.capitalize} of #{@primary_enchantment.to_s.capitalize}"
   end
+
 end
 
 
