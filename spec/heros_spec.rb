@@ -384,24 +384,108 @@ RSpec.describe Hero, "#init" do
     expect(@champion.name).to eq("Shane")
   end
 
-  it "should have a weapon" do
-    @champion.weapon = Weapon.new
-    @champion.weapon.should_not be_nil
-  end
-
   it "should have base hp of 30" do
     @champion.hp = 30
     expect(@champion.hp).to eq(30)
   end
 
-  it "should have class of rogue" do
-    @champion.class = :rogue
-    expect(@champion.class).to eq(:rogue)
+
+  context "Class is a rogue" do
+
+    before(:each) do
+      @champion.class = :rogue
+    end
+
+    it "should have class of rogue" do
+      expect(@champion.class).to eq(:rogue)
+    end
+
+    it "should have a knife" do
+     expect(@champion.weapon).to eq(:knife)
+    end
+
+    it "should have a strength of 5" do
+      expect(@champion.strength).to eq(5)
+    end
+
+    it "should have an armor of 2" do
+      expect(@champion.armor).to eq(2)
+    end
+
   end
 
-  it "should have class of warrior" do
-    @champion.class = :warrior
-    expect(@champion.class).to eq(:warrior)
+  context "Class is a warrior" do
+
+    before(:each) do
+      @champion.class = :warrior
+    end
+
+    it "should have class of warrior" do
+      expect(@champion.class).to eq(:warrior)
+    end
+
+    it "should have a sword" do
+       expect(@champion.weapon).to eq(:sword)
+    end
+
+    it "should have a strength of 4" do
+      expect(@champion.strength).to eq(4)
+    end
+
+    it "should have an armor of 4" do
+      expect(@champion.armor).to eq(4)
+    end
+
+
   end
 
+  context "Class is a wizard" do
+
+    before(:each) do
+      @champion.class = :wizard
+    end
+
+    it "should have class of wizard" do
+      expect(@champion.class).to eq(:wizard)
+    end
+
+    it "should have a staff" do
+       expect(@champion.weapon).to eq(:staff)
+    end
+
+    it "should have a strength of 2" do
+      expect(@champion.strength).to eq(2)
+    end
+
+    it "should have an armor of 1" do
+      expect(@champion.armor).to eq(1)
+    end
+
+
+  end
+
+  context "Class is a hunter" do
+
+    before(:each) do
+      @champion.class = :hunter
+    end
+
+    it "should have class of hunter" do
+      expect(@champion.class).to eq(:hunter)
+    end
+
+    it "should have a bow" do
+       expect(@champion.weapon).to eq(:bow)
+    end
+
+    it "should have a strength of 3" do
+      expect(@champion.strength).to eq(3)
+    end
+
+    it "should have an armor of 3" do
+      expect(@champion.armor).to eq(3)
+    end
+
+
+  end
 end

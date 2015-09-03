@@ -31,5 +31,44 @@ end
 
 
 class Hero
-  attr_accessor :name, :weapon, :hp, :class
+  attr_accessor :name, :hp, :class
+
+  def weapon
+    case @class
+      when :wizard
+        :staff
+      when :warrior
+        :sword
+      when :rogue
+        :knife
+      when :hunter
+        :bow
+    end
+  end
+
+  def strength
+    case @class
+      when :wizard
+        2
+      when :warrior
+        4
+      when :rogue
+        5
+      when :hunter
+        3
+    end
+  end
+
+  def armor
+    case @class
+      when :wizard
+        1
+      when :warrior
+        4
+      when :rogue
+        2
+      when :hunter
+        3
+    end
+  end
 end
