@@ -393,15 +393,15 @@ RSpec.describe Hero, "#init" do
   context "Class is a rogue" do
 
     before(:each) do
-      @champion.class = :rogue
-    end
-
-    it "should have class of rogue" do
-      expect(@champion.class).to eq(:rogue)
+      @champion= Rogue.new
     end
 
     it "should have a knife" do
-     expect(@champion.weapon).to eq(:knife)
+     expect(@champion.weapon).to be_a(Knife)
+    end
+
+    it "should have a range of 2 ft" do
+      expect(@champion.weapon.range).to eq(2)
     end
 
     it "should have a strength of 5" do
@@ -412,20 +412,23 @@ RSpec.describe Hero, "#init" do
       expect(@champion.armor).to eq(2)
     end
 
+    it "should have a speed of 25" do
+      expect(@champion.speed).to eq(25)
+    end
   end
 
   context "Class is a warrior" do
 
     before(:each) do
-      @champion.class = :warrior
-    end
-
-    it "should have class of warrior" do
-      expect(@champion.class).to eq(:warrior)
+      @champion = Warrior.new
     end
 
     it "should have a sword" do
-       expect(@champion.weapon).to eq(:sword)
+       expect(@champion.weapon).to be_a(Sword)
+    end
+
+    it "should have a range of 5 ft" do
+      expect(@champion.weapon.range).to eq(5)
     end
 
     it "should have a strength of 4" do
@@ -436,23 +439,26 @@ RSpec.describe Hero, "#init" do
       expect(@champion.armor).to eq(4)
     end
 
+    it "should have a speed of 15" do
+      expect(@champion.speed).to eq(15)
+    end
 
   end
 
   context "Class is a wizard" do
 
     before(:each) do
-      @champion.class = :wizard
-    end
-
-    it "should have class of wizard" do
-      expect(@champion.class).to eq(:wizard)
+      @champion = Wizard.new
     end
 
     it "should have a staff" do
-       expect(@champion.weapon).to eq(:staff)
+       expect(@champion.weapon).to be_a(Staff)
     end
 
+    it "should have a range of 50 ft" do
+      expect(@champion.weapon.range).to eq(50)
+    end
+   
     it "should have a strength of 2" do
       expect(@champion.strength).to eq(2)
     end
@@ -461,21 +467,24 @@ RSpec.describe Hero, "#init" do
       expect(@champion.armor).to eq(1)
     end
 
+    it "should have a speed of 5" do
+      expect(@champion.speed).to eq(5)
+    end
 
   end
 
   context "Class is a hunter" do
 
     before(:each) do
-      @champion.class = :hunter
-    end
-
-    it "should have class of hunter" do
-      expect(@champion.class).to eq(:hunter)
+      @champion = Hunter.new
     end
 
     it "should have a bow" do
-       expect(@champion.weapon).to eq(:bow)
+       expect(@champion.weapon).to be_a(Bow)
+    end
+
+    it "should have a range of 30 ft" do
+      expect(@champion.weapon.range).to eq(30)
     end
 
     it "should have a strength of 3" do
@@ -486,6 +495,9 @@ RSpec.describe Hero, "#init" do
       expect(@champion.armor).to eq(3)
     end
 
+    it "should have a speed of 10" do
+      expect(@champion.speed).to eq(10)
+    end
 
   end
 end

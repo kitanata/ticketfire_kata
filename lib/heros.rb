@@ -26,49 +26,132 @@ class Weapon
     "#{@secondary_enchantment.to_s.capitalize} #{@quality.to_s.capitalize} #{@type.to_s.capitalize} of #{@primary_enchantment.to_s.capitalize}"
   end
 
+  ##################################  ABSTRACT METHODS  #######################################################################################
+  def range
+    raise NotImplementedError.
+      new("#{self.class.name}#range is an 
+          abstract method.")
+  end
+
+end
+
+class Sword < Weapon
+
+  def range
+    5
+  end
+end
+
+class Knife < Weapon
+  
+  def range
+    2
+  end
+end
+
+class Staff < Weapon
+  
+  def range
+    50
+  end
+end
+
+class Bow < Weapon
+  
+  def range
+    30
+  end
 end
 
 
 
 class Hero
-  attr_accessor :name, :hp, :class
+  attr_accessor :name, :hp
 
-  def weapon
-    case @class
-      when :wizard
-        :staff
-      when :warrior
-        :sword
-      when :rogue
-        :knife
-      when :hunter
-        :bow
-    end
+  ##################################  ABSTRACT METHODS  #######################################################################################
+  def speed
+    raise NotImplementedError.
+      new("#{self.class.name}#speed is an 
+          abstract method.")
   end
+end
 
-  def strength
-    case @class
-      when :wizard
-        2
-      when :warrior
-        4
-      when :rogue
-        5
-      when :hunter
-        3
-    end
+class Warrior < Hero
+  attr_reader :weapon
+
+  def initialize
+    @weapon = Sword.new
   end
 
   def armor
-    case @class
-      when :wizard
-        1
-      when :warrior
-        4
-      when :rogue
-        2
-      when :hunter
-        3
-    end
+    4
+  end
+
+  def strength
+    4
+  end
+
+  def speed
+    15
+  end
+end
+
+class Wizard < Hero
+  attr_reader :weapon
+
+  def initialize
+    @weapon = Staff.new
+  end
+
+  def armor
+    1
+  end
+
+  def strength
+    2
+  end
+
+  def speed
+    5
+  end
+end
+
+class Rogue < Hero
+  attr_reader :weapon
+
+  def initialize
+    @weapon = Knife.new
+  end
+
+  def armor
+    2
+  end
+
+  def strength
+    5
+  end
+
+  def speed
+    25
+  end
+end
+
+class Hunter < Hero
+  attr_reader :weapon
+
+  def initialize
+    @weapon = Bow.new
+  end
+
+  def armor
+    3
+  end
+
+  def strength
+    3
+  end
+
+  def speed
+    10
   end
 end
