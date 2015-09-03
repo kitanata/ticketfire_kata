@@ -66,7 +66,7 @@ end
 
 
 class Hero
-  attr_accessor :name, :hp
+  attr_accessor :name, :hp, :weapon
 
   ##################################  ABSTRACT METHODS  #######################################################################################
   def armor
@@ -89,10 +89,9 @@ class Hero
 end
 
 class Warrior < Hero
-  attr_reader :weapon
 
   def initialize
-    @weapon = Sword.new
+    self.weapon = Sword.new
   end
 
   def armor
@@ -109,10 +108,9 @@ class Warrior < Hero
 end
 
 class Wizard < Hero
-  attr_reader :weapon
 
   def initialize
-    @weapon = Staff.new
+    self.weapon = Staff.new
   end
 
   def armor
@@ -129,10 +127,9 @@ class Wizard < Hero
 end
 
 class Rogue < Hero
-  attr_reader :weapon
 
   def initialize
-    @weapon = Knife.new
+    self.weapon = Knife.new
   end
 
   def armor
@@ -149,10 +146,9 @@ class Rogue < Hero
 end
 
 class Hunter < Hero
-  attr_reader :weapon
 
   def initialize
-    @weapon = Bow.new
+    self.weapon = Bow.new
   end
 
   def armor
