@@ -69,6 +69,18 @@ class Hero
   attr_accessor :name, :hp
 
   ##################################  ABSTRACT METHODS  #######################################################################################
+  def armor
+    raise NotImplementedError.
+      new("#{self.class.name}#armor is an 
+          abstract method.")
+  end
+
+  def strength
+    raise NotImplementedError.
+      new("#{self.class.name}#strength is an 
+          abstract method.")
+  end
+
   def speed
     raise NotImplementedError.
       new("#{self.class.name}#speed is an 
